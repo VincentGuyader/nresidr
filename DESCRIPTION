@@ -1,0 +1,15 @@
+Package: nresidr
+Title: Draw a watch
+Version: 0.0.0.9000
+Authors@R: person("Vincent", "Guyader", email = "vincnt@thinkr.fr", role = c("aut", "cre"))
+Description: Just draw a watch.
+Depends: R (>= 3.4.0)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: ggplot2,
+    ggforce,
+    lubridate,
+    purrr,
+    ggthemes
+RoxygenNote: 6.1.1
