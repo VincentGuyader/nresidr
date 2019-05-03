@@ -16,21 +16,23 @@
 mod_clock_ui <- function(id){
   ns <- NS(id)
   tagList(
-     plotOutput("clock")
+     plotOutput(ns("clock"))
   )
 }
     
 # Module Server
 
     
+#' @param freq refresh time in milliseconds
+#'
 #' @rdname mod_clock
 #' @export
 #' @keywords internal
     
-mod_clock_server <- function(input, output, session){
+mod_clock_server <- function(input, output, session,freq=1000){
   ns <- session$ns
-  clock <- renderPlot({
-    
+  output$clock <- renderPlot({
+    invalidateLater(freq)
     cadran()
     
   })
