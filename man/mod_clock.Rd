@@ -7,7 +7,7 @@
 \usage{
 mod_clock_ui(id)
 
-mod_clock_server(input, output, session)
+mod_clock_server(input, output, session, freq = 1000)
 }
 \arguments{
 \item{id}{shiny id}
@@ -17,6 +17,8 @@ mod_clock_server(input, output, session)
 \item{output}{internal}
 
 \item{session}{internal}
+
+\item{freq}{refresh time in milliseconds}
 }
 \description{
 A shiny Module.
