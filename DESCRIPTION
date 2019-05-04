@@ -14,7 +14,8 @@ Imports:
     glue,
     ggplot2,
     ggforce,
-    ggthemes
+    ggthemes,
+    magrittr
 Remotes: 
     Thinkr-open/golem
 RoxygenNote: 6.1.1

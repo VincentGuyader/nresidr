@@ -5,7 +5,9 @@ app_ui <- function() {
     golem_add_external_resources(),
     # List the first level UI elements here 
     fluidPage(
-      h1("nresidr")
+      h1("nresidr"),
+      mod_digit_ui("digit_ui_1"),
+      mod_clock_ui("clock_ui_1")
     )
   )
 }

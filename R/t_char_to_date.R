@@ -1,4 +1,5 @@
 #' @importFrom lubridate hms hm
+#' @importFrom magrittr %>%
 t_char_to_date <- function(t){
 
 if (is.character(t)){
