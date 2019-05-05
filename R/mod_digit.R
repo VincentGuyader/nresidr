@@ -16,7 +16,7 @@
 mod_digit_ui <- function(id){
   ns <- NS(id)
   tagList(
-    plotOutput(ns("clock"))
+    imageOutput(ns("clock"))
   )
 }
     
@@ -25,13 +25,18 @@ mod_digit_ui <- function(id){
 #' @rdname mod_digit
 #' @export
 #' @keywords internal
+#' @importFrom magick image_write
     
 mod_digit_server <- function(input, output, session,freq=1000){
   ns <- session$ns
-  output$clock <- renderPlot({
+  output$clock <- renderImage({
     invalidateLater(freq)
-    draw_as_digits()
     
+    tmpfile <-  draw_as_digits() %>%
+      image_write(tempfile(fileext='png'), format = 'png')
+    
+    # Return a list
+    list(src = tmpfile, contentType = "image/png")
   })
 }
     
